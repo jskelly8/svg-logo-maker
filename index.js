@@ -32,8 +32,10 @@ const questions = () => {
 };
 
 // Function to generate SVG content and save to file
-const generateAndSave = () => {
+const generateAndSave = (answers) => {
     let shapeInstance;
+
+    const { shape, shapeColor, textColor, text } = answers;
 
     switch (shape) {
         case 'circle':
@@ -57,7 +59,7 @@ const generateAndSave = () => {
     });
 };
 
-// Main function to full run the application
+// Main function to fully run the application
 const run = async () => {
     try {
         const answers = await questions();
